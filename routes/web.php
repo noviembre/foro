@@ -23,3 +23,10 @@ Route::get('{provider}/redirect',[
 
 ]);
 
+//=======
+Route::group(['middleware' => 'auth'], function (){
+
+    Route::resource('channels', 'ChannelsController');
+
+});
+
