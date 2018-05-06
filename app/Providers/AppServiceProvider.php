@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Providers;
-
+// add library 1
+use App\Channel;
 use Illuminate\Support\ServiceProvider;
+// add library 2
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::share('channels', Channel::all());
     }
 
     /**
