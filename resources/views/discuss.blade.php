@@ -11,6 +11,12 @@
                 {{ csrf_field() }}
 
                 <div class="form-group">
+                    <label for="">Title:</label>
+                    <input name="title" type="text" class="form-control">
+
+                </div>
+
+                <div class="form-group">
                     <label for="">Pick a channel</label>
 
                     <select name="channel_id" id="channel_id" class="form-control">
@@ -23,7 +29,7 @@
                     <div class="form-group">
 
                         <label for="">Ask a Question</label>
-                        <textarea name="content" id="content" class="form-control" rows="10"></textarea>
+                        <textarea name="contenido" id="contenido" class="form-control" rows="10"></textarea>
 
                     </div>
 
