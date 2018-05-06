@@ -80,6 +80,9 @@
 
        <div class="container">
            <div class="col-md-4">
+               <a href="{{ route('discussions.create') }}" class="form-control btn btn-primary" type="submit">
+                   Create Discussion
+               </a>
                <div class="panel panel-default">
 
                    <div class="panel-heading">
