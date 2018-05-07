@@ -13,7 +13,14 @@ Route::get('/discuss',function (){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+
+//listar discussiones
+Route::get('/forum', [
+
+    'uses' => 'ForumsController@index',
+    'as' => 'forum'
+
+]);
 
 Route::get('{provider}/auth',[
 
