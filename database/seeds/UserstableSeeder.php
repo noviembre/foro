@@ -22,5 +22,15 @@ class UserstableSeeder extends Seeder
 
         ]);
 
+        //Nuevo usuario
+        App\User::create([
+            // Admin seeder
+            'name' => 'Alina',
+            'password' => bcrypt('123456'),
+            'email' => 'ali@ya.com',
+            'avatar' => asset('avatars/avatar.png')
+
+        ]);
+
     }
 }
