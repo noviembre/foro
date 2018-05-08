@@ -56,4 +56,29 @@
 
     @endforeach
 
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+
+            <form action="{{ route('discussion.reply',['id'=>$d->id ]) }}" method="post">
+                {{ csrf_field() }}
+
+                <div class="form-group">
+                    <label for="">Leave a replay...</label>
+                    <textarea name="reply" id="reply" rows="10" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-success" type="submit">Leave a Reply</button>
+
+                </div>
+
+            </form>
+                
+            
+        </div>
+
+    </div>
+   
+
 @endsection
