@@ -96,5 +96,19 @@ Route::group(['middleware' => 'auth'], function (){
 
     ]);
 
+    Route::get('/discussion/watch/{id}', [
+
+        'uses' => 'WatchersController@watch',
+        'as' => 'discussion.watch'
+
+    ]);
+
+    Route::get('/discussion/unwatch/{id}', [
+
+        'uses' => 'WatchersController@unwatch',
+        'as' => 'discussion.unwatch'
+
+    ]);
+
 });
 
