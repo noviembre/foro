@@ -20,9 +20,12 @@
         </div>
 
         <div class="panel-footer">
-            <p>
-                {{ $d->replies->count() }} Replies
-            </p>
+           <span>
+                    {{ $d->replies->count() }} Replies
+                </span>
+            <a href="{{ route('channel', ['slug' => $d->channel->slug]) }}" class="btn btn-info btn-xs pull-right">
+                {{ $d->channel->title }}
+            </a>
 
         </div>
 
@@ -70,21 +73,26 @@
 
         <div class="panel-body">
 
-            <form action="{{ route('discussion.reply',['id'=>$d->id ]) }}" method="post">
-                {{ csrf_field() }}
+            @if(Auth::check())
+                <form action="{{ route('discussion.reply',['id'=>$d->id ]) }}" method="post">
+                    {{ csrf_field() }}
 
-                <div class="form-group">
-                    <label for="">Leave a replay...</label>
-                    <textarea name="reply" id="reply" rows="10" class="form-control"></textarea>
+                    <div class="form-group">
+                        <label for="">Leave a replay...</label>
+                        <textarea name="reply" id="reply" rows="10" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-success" type="submit">Leave a Reply</button>
+
+                    </div>
+
+                </form>
+            @else
+                <div class="text-center">
+                    <h2>Sign in to leave a reply</h2>
                 </div>
-
-                <div class="form-group">
-                    <button class="btn btn-success" type="submit">Leave a Reply</button>
-
-                </div>
-
-            </form>
-                
+            @endif
             
         </div>
 

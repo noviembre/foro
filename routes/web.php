@@ -58,7 +58,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::resource('channels', 'ChannelsController');
 
     //discussions crear
-    Route::get('discussion/create', [
+    Route::get('discussion/create/new', [
 
         'uses' => 'DiscussionsController@create',
         'as' => 'discussions.create'

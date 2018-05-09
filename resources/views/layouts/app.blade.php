@@ -83,11 +83,22 @@
                <a href="{{ route('discussions.create') }}" class="form-control btn btn-primary" type="submit">
                    Create Discussion
                </a>
+
                <div class="panel panel-default">
 
-                   <div class="panel-heading">
-                       channels
+                   <div class="panel-body">
+                       <ul class="list-group">
+                           <li class="list-group-item">
+                               <a href="/forum" style="text-decoration: none">
+                                       Home
+                                   </a>
+
+                               </li>
+                       </ul>
                    </div>
+
+               </div>
+               <div class="panel panel-default">
 
                    <div class="panel-body">
                        <ul class="list-group">
