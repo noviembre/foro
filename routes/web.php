@@ -110,5 +110,12 @@ Route::group(['middleware' => 'auth'], function (){
 
     ]);
 
+    Route::get('/discussion/best/reply/{id}', [
+
+        'uses' => 'RepliesController@best_answer',
+        'as' => 'discussion.best.answer'
+
+    ]);
+
 });
 
