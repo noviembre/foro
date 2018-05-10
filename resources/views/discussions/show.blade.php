@@ -6,7 +6,7 @@
         <div class="panel-heading">
 
             <img src="{{ $d->user->avatar }}" alt="" width="40px" height="40px">&nbsp;&nbsp;&nbsp;
-            <span>{{ $d->user->name }}, <b>{{ $d->created_at->diffForHumans() }}</b></span>
+            <span>{{ $d->user->name }}, <b>{{ $d->user->points }}</b></span>
 
 
             @if($d->is_being_watched_by_auth_user())
@@ -31,7 +31,7 @@
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <img src="{{ $best_answer->user->avatar }}" alt="" width="40px" height="40px">&nbsp;&nbsp;&nbsp;
-                            <span>{{ $best_answer->user->name }}</span>
+                            <span>{{ $best_answer->user->name }} - <b>{{ $best_answer->user->points }}</b></span>
                         </div>
                         <div class="panel-body">
                             {{ $best_answer->content }}
@@ -63,10 +63,13 @@
             <div class="panel-heading">
 
                 <img src="{{ $r->user->avatar }}" alt="" width="40px" height="40px">&nbsp;&nbsp;&nbsp;
-                <span>{{ $r->user->name }}, <b>{{ $r->created_at->diffForHumans() }}</b></span>
+                <span>{{ $r->user->name }} <b>{{ $r->user->points }}</b></span>
 
                 @if(!$best_answer)
-                <a href="{{ route('discussion.best.answer', ['id' => $r->id  ]) }}" class="btn btn-default pull-right btn-xs"> Mark as best answer</a>
+                    @if(Auth::id()== $d->user->id)
+                        <a href="{{ route('discussion.best.answer', ['id' => $d->id  ]) }}" class="btn btn-default pull-right btn-xs"> Mark as best answer</a>
+
+                     @endif
                 @endif
 
             </div>
