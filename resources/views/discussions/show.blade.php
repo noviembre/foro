@@ -63,7 +63,7 @@
             <div class="panel-heading">
 
                 <img src="{{ $r->user->avatar }}" alt="" width="40px" height="40px">&nbsp;&nbsp;&nbsp;
-                <span>{{ $r->user->name }} <b>{{ $r->user->points }}</b></span>
+                <span>{{ $r->user->name }} <b>{{ $d->user->points }}</b></span>
 
                 @if(!$best_answer)
                     @if(Auth::id()== $d->user->id)

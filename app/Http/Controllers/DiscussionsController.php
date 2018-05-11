@@ -60,7 +60,7 @@ class DiscussionsController extends Controller
         $d = Discussion::find($id);
 
         $reply = Reply::create([
-            'user_id' => $id,
+            'user_id' => Auth::id(),
             'discussion_id' => $id,
             'content' => request()->reply,
         ]);
@@ -86,6 +86,8 @@ class DiscussionsController extends Controller
         return redirect()->back();
 
     }
+
+
 
 
 }

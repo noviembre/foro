@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -78,6 +79,26 @@
             </div>
         </nav>
 
+        @if(count($errors) > 0)
+
+            <ul class="list-group-item">
+                @foreach($errors->all() as $error)
+
+                    <li class="list-group-item text-danger">
+
+                        {{ $error }}
+
+                    </li>
+
+                @endforeach
+
+            </ul>
+            <br>
+            <br>
+            <br>
+
+        @endif
+
        <div class="container">
            <div class="col-md-4">
                <a href="{{ route('discussions.create') }}" class="form-control btn btn-primary" type="submit">
@@ -129,5 +150,21 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <!-- Scripts for notifications  -->
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
+    <script>
+        @if(Session::has('success'))
+
+        toastr.success("{{ Session::get('success') }}")
+
+        @endif
+
+        @if(Session::has('info'))
+
+        toastr.info("{{ Session::get('info') }}")
+
+        @endif
+
+    </script>
 </body>
 </html>

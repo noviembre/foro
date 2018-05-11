@@ -12,7 +12,7 @@
 
                 <div class="form-group">
                     <label for="">Title:</label>
-                    <input name="title" type="text" class="form-control">
+                    <input name="title" value="{{old('title')}}" type="text" class="form-control">
 
                 </div>
 
@@ -29,13 +29,15 @@
                     <div class="form-group">
 
                         <label for="">Ask a Question</label>
-                        <textarea name="contenido" id="contenido" class="form-control" rows="10"></textarea>
+                        <textarea name="contenido" id="contenido" class="form-control" rows="10">
+                            {{old('contenido')}}
+                        </textarea>
 
                     </div>
 
                     <div class="form-group">
 
-                        <button class="btn btn-success btn-xs pull-right" type="submit">Create</button>
+                        <button class="btn btn-success pull-right" type="submit">Create</button>
 
                     </div>
 
