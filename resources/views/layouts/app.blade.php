@@ -110,11 +110,17 @@
                    <div class="panel-body">
                        <ul class="list-group">
                            <li class="list-group-item">
-                               <a href="/forum" style="text-decoration: none">
-                                       Home
-                                   </a>
-
-                               </li>
+                               <a href="/forum" style="text-decoration: none">Home</a>
+                           </li>
+                           <li class="list-group-item">
+                               <a href="/forum?filter=me" style="text-decoration: none">My discussions</a>
+                           </li>
+                           <li class="list-group-item">
+                               <a href="/forum?filter=solved" style="text-decoration: none">Solved</a>
+                           </li>
+                           <li class="list-group-item">
+                               <a href="/forum?filter=unsolved" style="text-decoration: none">No Solved</a>
+                           </li>
                        </ul>
                    </div>
 
