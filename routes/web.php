@@ -117,5 +117,19 @@ Route::group(['middleware' => 'auth'], function (){
 
     ]);
 
+    Route::get('discussions/edit/{slug}', [
+
+        'uses' => 'DiscussionsController@edit',
+        'as' => 'discussion.edit'
+
+    ]);
+
+    Route::post('discussions/update/{slug}', [
+
+        'uses' => 'DiscussionsController@update',
+        'as' => 'discussions.update'
+
+    ]);
+
 });
 
