@@ -110,10 +110,7 @@ class DiscussionsController extends Controller
 
         return redirect()->route('discussion', ['slug' => $d->slug ]);
 
-
-
     }
-
 
 
 

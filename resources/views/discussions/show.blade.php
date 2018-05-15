@@ -16,7 +16,9 @@
 
 
             @if(Auth::id() == $d->user->id)
-                <a href="{{ route('discussion.edit', ['id' => $d->slug ])}}" class="btn btn-info btn-xs pull-right">edit</a>
+                @if(!$d->hasBestAnswer())
+                    <a href="{{ route('discussion.edit', ['id' => $d->slug ])}}" class="btn btn-info btn-xs pull-right">edit</a>
+                    @endif
             @endif
 
 
@@ -77,9 +79,17 @@
 
                 @if(!$best_answer)
                     @if(Auth::id()== $d->user->id)
-                        <a href="{{ route('discussion.best.answer', ['id' => $d->id  ]) }}" class="btn btn-default pull-right btn-xs"> Mark as best answer</a>
+                        <a href="{{ route('discussion.best.answer', ['id' => $d->id  ]) }}" class="btn btn-primary pull-right btn-xs" style="margin-left: 10px"> Mark as best answer</a>
 
                      @endif
+
+
+                @endif
+
+                @if(Auth::id() == $r->user->id)
+                    @if(!$r->$best_answer)
+                        <a href="{{ route('reply.edit', ['id' => $r->id  ]) }}" class="btn btn-default pull-right btn-xs"> Edit</a>
+                    @endif
                 @endif
 
             </div>

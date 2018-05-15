@@ -131,5 +131,22 @@ Route::group(['middleware' => 'auth'], function (){
 
     ]);
 
+    //Editar
+    Route::get('/reply/edit/{id}', [
+
+        'uses' => 'RepliesController@edit',
+        'as' => 'reply.edit'
+
+    ]);
+
+    // Actualizar
+    Route::post('/reply/update/{id}', [
+
+        'uses' => 'RepliesController@update',
+        'as' => 'reply.update'
+
+    ]);
+
+
 });
 
