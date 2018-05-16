@@ -121,10 +121,22 @@
                            <li class="list-group-item">
                                <a href="/forum?filter=unsolved" style="text-decoration: none">No Solved</a>
                            </li>
+                           @if(Auth::check())
+                               @if(Auth::user()->admin)
+                           <li class="list-group-item">
+                               <a href="/channels" style="text-decoration: none"> All Channels</a>
+                           </li>
+                               @endif
+                           @endif
+
                        </ul>
                    </div>
 
+                   
+
                </div>
+
+
                <div class="panel panel-default">
 
                    <div class="panel-body">
